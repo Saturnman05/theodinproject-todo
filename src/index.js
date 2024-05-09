@@ -9,7 +9,7 @@ function component() {
     btn.innerHTML = 'Create Todo';
     btn.addEventListener('click', () => {
         const todoObject = new Todo('Hola', 'Descripcion', new Date(), 'Important');
-        document.body.appendChild(todoObject.createTodoDiv());
+        document.body.appendChild(todoObject.createTodoElement());
     })
 
     element.appendChild(btn);

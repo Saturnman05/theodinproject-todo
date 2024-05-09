@@ -7,29 +7,29 @@ export default class Todo {
         this.isDone = false;
     }
 
-    createTodoDiv() {
-        const div = document.createElement('div');
+    createTodoElement(typeElement='div') {
+        const element = document.createElement(typeElement);
         
         const title = document.createElement('h2');
         title.innerText = `Title: ${this.title}`;
-        div.appendChild(title);
+        element.appendChild(title);
 
         const description = document.createElement('p');
         description.innerText = `Description: ${this.description}`;
-        div.appendChild(description);
+        element.appendChild(description);
 
         const dueDate = document.createElement('p');
         dueDate.innerText = `Due date: ${this.dueDate.toString()}`;
-        div.appendChild(dueDate);
+        element.appendChild(dueDate);
 
         const priority = document.createElement('p');
         priority.innerText = `Priority: ${this.priority}`;
-        div.appendChild(priority);
+        element.appendChild(priority);
 
         const isDone = document.createElement('p');
         isDone.innerText = `Status: ${this.isDone ? 'Finished' : 'Not finished'}`;
-        div.appendChild(isDone);
+        element.appendChild(isDone);
 
-        return div;
+        return element;
     }
 }
