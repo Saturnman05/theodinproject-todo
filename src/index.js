@@ -1,15 +1,16 @@
 import _ from 'lodash';
 import './style.css';
-import printMe from './print.js';
+import Todo from './todo';
 
 function component() {
     const element = document.createElement('div');
+
     const btn = document.createElement('button');
-
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-    btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
+    btn.innerHTML = 'Create Todo';
+    btn.addEventListener('click', () => {
+        const todoObject = new Todo('Hola', 'Descripcion', new Date(), 'Important');
+        document.body.appendChild(todoObject.createTodoDiv());
+    })
 
     element.appendChild(btn);
 
